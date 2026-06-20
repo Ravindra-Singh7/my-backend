@@ -10,9 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://my-backend:ravi123@cluster0.jplq5sh.mongodb.net/?appName=Cluster0"
-)
+mongoose.connect(process.env.MONGODB_URL)
 .then(() => {
   console.log("Database connect ho gaya!");
 })
